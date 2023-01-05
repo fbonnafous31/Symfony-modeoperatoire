@@ -44,9 +44,15 @@ class Recette
      */
     private $etapes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=IngredientRecette::class, mappedBy="recette", orphanRemoval=true)
+     */
+    private $ingredientRecettes;
+
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
+        $this->ingredientRecettes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,6 +132,36 @@ class Recette
             // set the owning side to null (unless already changed)
             if ($etape->getRecette() === $this) {
                 $etape->setRecette(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, IngredientRecette>
+     */
+    public function getIngredientRecettes(): Collection
+    {
+        return $this->ingredientRecettes;
+    }
+
+    public function addIngredientRecette(IngredientRecette $ingredientRecette): self
+    {
+        if (!$this->ingredientRecettes->contains($ingredientRecette)) {
+            $this->ingredientRecettes[] = $ingredientRecette;
+            $ingredientRecette->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIngredientRecette(IngredientRecette $ingredientRecette): self
+    {
+        if ($this->ingredientRecettes->removeElement($ingredientRecette)) {
+            // set the owning side to null (unless already changed)
+            if ($ingredientRecette->getRecette() === $this) {
+                $ingredientRecette->setRecette(null);
             }
         }
 
