@@ -49,10 +49,16 @@ class Recette
      */
     private $ingredientRecettes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=UstensileRecette::class, mappedBy="recette", orphanRemoval=true)
+     */
+    private $ustensileRecettes;
+
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
         $this->ingredientRecettes = new ArrayCollection();
+        $this->ustensileRecettes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -162,6 +168,36 @@ class Recette
             // set the owning side to null (unless already changed)
             if ($ingredientRecette->getRecette() === $this) {
                 $ingredientRecette->setRecette(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, UstensileRecette>
+     */
+    public function getUstensileRecettes(): Collection
+    {
+        return $this->ustensileRecettes;
+    }
+
+    public function addUstensileRecette(UstensileRecette $ustensileRecette): self
+    {
+        if (!$this->ustensileRecettes->contains($ustensileRecette)) {
+            $this->ustensileRecettes[] = $ustensileRecette;
+            $ustensileRecette->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUstensileRecette(UstensileRecette $ustensileRecette): self
+    {
+        if ($this->ustensileRecettes->removeElement($ustensileRecette)) {
+            // set the owning side to null (unless already changed)
+            if ($ustensileRecette->getRecette() === $this) {
+                $ustensileRecette->setRecette(null);
             }
         }
 
