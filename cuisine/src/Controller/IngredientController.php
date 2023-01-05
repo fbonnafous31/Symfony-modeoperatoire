@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
 use App\Repository\IngredientRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/ingredient")
@@ -27,6 +28,7 @@ class IngredientController extends AbstractController
 
     /**
      * @Route("/new", name="app_ingredient_new", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, IngredientRepository $ingredientRepository): Response
     {
@@ -81,7 +83,7 @@ class IngredientController extends AbstractController
      */
     public function delete(Request $request, Ingredient $ingredient, IngredientRepository $ingredientRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$ingredient->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $ingredient->getId(), $request->request->get('_token'))) {
             $ingredientRepository->remove($ingredient, true);
         }
 
