@@ -4,13 +4,11 @@ namespace App\Controller;
 
 use App\Entity\CategoriesPrix;
 use App\Entity\NiveauDifficulte;
-use App\Repository\CategoriesPrixRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecetteController extends AbstractController
 {
@@ -25,14 +23,12 @@ class RecetteController extends AbstractController
             ->add('nom', TextType::class, [
                 'label' => 'Nom de la recette',
                 'attr' => [
-                    'class' => 'form-control',
                     'placeholder' => 'Nom de la recette'
                 ]
             ])
             ->add('duree', TextType::class, [
                 'label' => 'Durée de préparation',
                 'attr' => [
-                    'class' => 'form-control',
                     'placeholder' => 'Durée de préparation'
                 ]
             ])
