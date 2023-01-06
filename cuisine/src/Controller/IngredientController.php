@@ -12,12 +12,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/ingredient")
+ * @Route("/admin/ingredient")
  */
 class IngredientController extends AbstractController
 {
     /**
-     * @Route("/", name="app_ingredient_index", methods={"GET"})
+     * @Route("/", name="ingredient_index", methods={"GET"})
      */
     public function index(IngredientRepository $ingredientRepository): Response
     {
@@ -27,7 +27,7 @@ class IngredientController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_ingredient_new", methods={"GET", "POST"})
+     * @Route("/create", name="ingredient_create", methods={"GET", "POST"})
      * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, IngredientRepository $ingredientRepository): Response
@@ -39,17 +39,17 @@ class IngredientController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $ingredientRepository->add($ingredient, true);
 
-            return $this->redirectToRoute('app_ingredient_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('ingredient_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('ingredient/new.html.twig', [
+        return $this->renderForm('ingredient/create.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form,
         ]);
     }
 
     /**
-     * @Route("/{id}", name="app_ingredient_show", methods={"GET"})
+     * @Route("/{id}", name="ingredient_show", methods={"GET"})
      */
     public function show(Ingredient $ingredient): Response
     {
@@ -59,7 +59,7 @@ class IngredientController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_ingredient_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="ingredient_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Ingredient $ingredient, IngredientRepository $ingredientRepository): Response
     {
@@ -69,7 +69,7 @@ class IngredientController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $ingredientRepository->add($ingredient, true);
 
-            return $this->redirectToRoute('app_ingredient_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('ingredient_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('ingredient/edit.html.twig', [
@@ -79,7 +79,7 @@ class IngredientController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_ingredient_delete", methods={"POST"})
+     * @Route("/{id}", name="ingredient_delete", methods={"POST"})
      */
     public function delete(Request $request, Ingredient $ingredient, IngredientRepository $ingredientRepository): Response
     {
@@ -87,6 +87,6 @@ class IngredientController extends AbstractController
             $ingredientRepository->remove($ingredient, true);
         }
 
-        return $this->redirectToRoute('app_ingredient_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('ingredient_index', [], Response::HTTP_SEE_OTHER);
     }
 }

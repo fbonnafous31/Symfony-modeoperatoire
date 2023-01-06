@@ -14,10 +14,14 @@ class RecetteController extends AbstractController
 {
 
     /**
-     * @Route("/admin/recette/{id}/edit", name="recette_edit")
+     * @Route("/recette/{id}/edit", name="recette_edit")
      */
     public function edit($id, RecetteRepository $recetteRepository, Request $request, EntityManagerInterface $em)
     {
+        if (is_null($this->getUser())) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $recette = $recetteRepository->find($id);
 
         $form = $this->createForm(RecetteType::class, $recette);
@@ -37,10 +41,14 @@ class RecetteController extends AbstractController
     }
 
     /**
-     * @Route("/admin/recette/create", name="recette_create")
+     * @Route("/recette/create", name="recette_create")
      */
     public function create(Request $request, EntityManagerInterface $em)
     {
+        if (is_null($this->getUser())) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $recette = new Recette;
 
         $form = $this->createForm(RecetteType::class, $recette);

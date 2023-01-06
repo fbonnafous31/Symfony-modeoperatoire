@@ -1,26 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ustensile{% endblock %}
+{% block title %}Ustensile
+{% endblock %}
 
 {% block body %}
-    <h1>Ustensile</h1>
+	<h1>Ustensile</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ ustensile.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ ustensile.Nom }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ ustensile.id }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ ustensile.Nom }}</td>
+			</tr>
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_ustensile_index') }}">back to list</a>
+	<a href="{{ path('ustensile_index') }}">back to list</a>
 
-    <a href="{{ path('app_ustensile_edit', {'id': ustensile.id}) }}">edit</a>
+	<a href="{{ path('ustensile_edit', {'id': ustensile.id}) }}">edit</a>
 
-    {{ include('ustensile/_delete_form.html.twig') }}
+	{{ include('ustensile/_delete_form.html.twig') }}
 {% endblock %}

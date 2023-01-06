@@ -33,7 +33,7 @@ class AppFixtures extends Fixture
         $user = new User;
         $hash = $this->hasher->hashPassword($user, "password");
 
-        $user->setEmail("user@mukitchen.com")
+        $user->setEmail("user@mykitchen.com")
             ->setPassword($hash);
         $manager->persist($user);
 

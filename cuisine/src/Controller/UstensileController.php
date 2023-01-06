@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/ustensile")
+ * @Route("/admin/ustensile")
  */
 class UstensileController extends AbstractController
 {
     /**
-     * @Route("/", name="app_ustensile_index", methods={"GET"})
+     * @Route("/", name="ustensile_index", methods={"GET"})
      */
     public function index(UstensileRepository $ustensileRepository): Response
     {
@@ -26,9 +26,9 @@ class UstensileController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_ustensile_new", methods={"GET", "POST"})
+     * @Route("/new", name="ustensile_create", methods={"GET", "POST"})
      */
-    public function new(Request $request, UstensileRepository $ustensileRepository): Response
+    public function create(Request $request, UstensileRepository $ustensileRepository): Response
     {
         $ustensile = new Ustensile();
         $form = $this->createForm(UstensileType::class, $ustensile);
@@ -37,7 +37,7 @@ class UstensileController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $ustensileRepository->add($ustensile, true);
 
-            return $this->redirectToRoute('app_ustensile_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('ustensile_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('ustensile/new.html.twig', [
@@ -47,7 +47,7 @@ class UstensileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_ustensile_show", methods={"GET"})
+     * @Route("/{id}", name="ustensile_show", methods={"GET"})
      */
     public function show(Ustensile $ustensile): Response
     {
@@ -57,7 +57,7 @@ class UstensileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_ustensile_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="ustensile_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Ustensile $ustensile, UstensileRepository $ustensileRepository): Response
     {
@@ -67,7 +67,7 @@ class UstensileController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $ustensileRepository->add($ustensile, true);
 
-            return $this->redirectToRoute('app_ustensile_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('ustensile_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('ustensile/edit.html.twig', [
@@ -77,14 +77,14 @@ class UstensileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_ustensile_delete", methods={"POST"})
+     * @Route("/{id}", name="ustensile_delete", methods={"POST"})
      */
     public function delete(Request $request, Ustensile $ustensile, UstensileRepository $ustensileRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$ustensile->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $ustensile->getId(), $request->request->get('_token'))) {
             $ustensileRepository->remove($ustensile, true);
         }
 
-        return $this->redirectToRoute('app_ustensile_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('ustensile_index', [], Response::HTTP_SEE_OTHER);
     }
 }
