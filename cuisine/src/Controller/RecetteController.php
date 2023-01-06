@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\CategoriesPrixRepository;
+use App\Repository\NiveauDifficulteRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -13,7 +15,7 @@ class RecetteController extends AbstractController
     /**
      * @Route("/admin/recette/create", name="recette_create")
      */
-    public function create(FormFactoryInterface $factory)
+    public function create(FormFactoryInterface $factory, CategoriesPrixRepository $categoriesPrixRepository, NiveauDifficulteRepository $niveauDifficulteRepository)
     {
         $builder = $factory->createBuilder();
 
@@ -31,28 +33,34 @@ class RecetteController extends AbstractController
                     'class' => 'form-control',
                     'placeholder' => 'Durée de préparation'
                 ]
-            ])
-            ->add('difficulte', ChoiceType::class, [
-                'label' => 'Niveau de difficulté',
-                'attr' => ['class' => 'form-control'],
-                'placeholder' => '-- Choisir le niveau de difficulté -- ',
-                'choices' => [
-                    'Facile'    => 1,
-                    'Moyen'     => 2,
-                    'Difficile' => 3
-                ]
-            ])
-            ->add('prix', ChoiceType::class, [
-                'label' => 'Niveau de prix',
-                'attr' => ['class' => 'form-control'],
-                'placeholder' => '-- Choisir le niveau de prix -- ',
-                'choices' => [
-                    'Bon marché' => 1,
-                    'Moyen'      => 2,
-                    'Assez cher' => 3,
-                    'Cher'       => 4
-                ]
             ]);
+
+        $options = [];
+
+        foreach ($niveauDifficulteRepository->findAll() as $niveau) {
+            $options[$niveau->getDescription()] = $niveau->getNiveau();
+        }
+
+        $builder->add('difficulte', ChoiceType::class, [
+            'label' => 'Niveau de difficulté',
+            'attr' => ['class' => 'form-control'],
+            'placeholder' => '-- Choisir le niveau de difficulté -- ',
+            'choices' => $options
+        ]);
+
+
+        $options = [];
+
+        foreach ($categoriesPrixRepository->findAll() as $categorie) {
+            $options[$categorie->getDescription()] = $categorie->getCategorie();
+        }
+
+        $builder->add('prix', ChoiceType::class, [
+            'label' => 'Niveau de prix',
+            'attr' => ['class' => 'form-control'],
+            'placeholder' => '-- Choisir le niveau de prix -- ',
+            'choices' => $options
+        ]);
 
         $form = $builder->getForm();
 
