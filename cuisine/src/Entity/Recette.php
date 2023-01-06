@@ -22,22 +22,22 @@ class Recette
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nom;
+    private $nom;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $Duree;
+    private $duree;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Difficulte;
+    private $difficulte;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Prix;
+    private $prix;
 
     /**
      * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="recette")
@@ -66,50 +66,50 @@ class Recette
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getnom(): ?string
     {
-        return $this->Nom;
+        return $this->nom;
     }
 
-    public function setNom(string $Nom): self
+    public function setnom(string $nom): self
     {
-        $this->Nom = $Nom;
+        $this->nom = $nom;
 
         return $this;
     }
 
-    public function getDuree(): ?int
+    public function getduree(): ?int
     {
-        return $this->Duree;
+        return $this->duree;
     }
 
-    public function setDuree(?int $Duree): self
+    public function setduree(?int $duree): self
     {
-        $this->Duree = $Duree;
+        $this->duree = $duree;
 
         return $this;
     }
 
-    public function getDifficulte(): ?string
+    public function getdifficulte(): ?string
     {
-        return $this->Difficulte;
+        return $this->difficulte;
     }
 
-    public function setDifficulte(?string $Difficulte): self
+    public function setdifficulte(?string $difficulte): self
     {
-        $this->Difficulte = $Difficulte;
+        $this->difficulte = $difficulte;
 
         return $this;
     }
 
-    public function getPrix(): ?string
+    public function getprix(): ?string
     {
-        return $this->Prix;
+        return $this->prix;
     }
 
-    public function setPrix(?string $Prix): self
+    public function setprix(?string $prix): self
     {
-        $this->Prix = $Prix;
+        $this->prix = $prix;
 
         return $this;
     }
