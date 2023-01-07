@@ -12,7 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecetteController extends AbstractController
 {
-
     /**
      * @Route("/recette/{id}/edit", name="recette_edit")
      */
@@ -30,12 +29,13 @@ class RecetteController extends AbstractController
 
         if ($form->isSubmitted()) {
             $em->flush();
+            $this->addFlash('success', "Recette modifiée");
         }
 
         $formView = $form->createView();
 
         return $this->render('recette/edit.html.twig', [
-            'recette' => $recette,
+            'recette'  => $recette,
             'formView' => $formView
         ]);
     }
@@ -58,6 +58,7 @@ class RecetteController extends AbstractController
         if ($form->isSubmitted()) {
             $em->persist($recette);
             $em->flush();
+            $this->addFlash('success', "Recette créée");
         }
 
         $formView = $form->createView();
