@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ustensile index
+{% endblock %}
+
+{% block body %}
+	<h1>Ustensile index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for ustensile in ustensiles %}
+				<tr>
+					<td>{{ ustensile.id }}</td>
+					<td>{{ ustensile.Nom }}</td>
+					<td>
+						<a href="{{ path('ustensile_show', {'id': ustensile.id}) }}">show</a>
+						<a href="{{ path('ustensile_edit', {'id': ustensile.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('ustensile_create') }}">Create new</a>
+{% endblock %}
