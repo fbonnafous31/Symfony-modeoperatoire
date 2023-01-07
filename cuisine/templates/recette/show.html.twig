@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ recette.nom }}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ recette.nom }}</h1>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Nom</th>
+				<td>{{ recette.nom }}</td>
+			</tr>
+			<tr>
+				<th>Durée</th>
+				<td>{{ recette.duree }}</td>
+			</tr>
+			<tr>
+				<th>Difficulté</th>
+				<td>{{ niveau }}</td>
+			</tr>
+			<tr>
+				<th>Prix</th>
+				<td>{{ prix }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('recette_index') }}">Retour à la liste</a>
+
+{% endblock %}

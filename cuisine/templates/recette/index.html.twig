@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes recettes
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des recettes</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Durée</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for recette in recettes %}
+				<tr>
+					<td>{{ recette.nom }}</td>
+					<td>{{ recette.duree }}</td>
+					<td>
+						<a href="{{ path('recette_show', {'id': recette.id}) }}">show</a>
+						<a href="{{ path('recette_edit', {'id': recette.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="{{ path('recette_create') }}">
+		<i class="fas fa-save"></i>
+		Créer une recette</a>
+{% endblock %}
