@@ -40,7 +40,7 @@ class Recette
     private $prix;
 
     /**
-     * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="recette")
+     * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="recette", cascade={"persist"})
      */
     private $etapes;
 
@@ -112,6 +112,11 @@ class Recette
         $this->prix = $prix;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nom;
     }
 
     /**

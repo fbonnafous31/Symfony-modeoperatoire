@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Recette;
 use App\Form\RecetteType;
-use App\Repository\CategoriesPrixRepository;
-use App\Repository\NiveauDifficulteRepository;
 use App\Repository\RecetteRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CategoriesPrixRepository;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\NiveauDifficulteRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -91,9 +91,17 @@ class RecetteController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            foreach ($recette->getEtapes() as $etape) {
+                $etape->setRecette($recette);
+                $em->persist($etape);
+                $recette->addEtape($etape);
+            }
+
             $em->persist($recette);
             $em->flush();
+
             $this->addFlash('success', "Recette créée");
             return $this->redirectToRoute('recette_index');
         }

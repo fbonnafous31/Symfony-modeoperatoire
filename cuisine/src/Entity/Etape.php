@@ -18,11 +18,6 @@ class Etape
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $numero;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $detail;
@@ -35,18 +30,6 @@ class Etape
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getNumero(): ?int
-    {
-        return $this->numero;
-    }
-
-    public function setNumero(int $numero): self
-    {
-        $this->numero = $numero;
-
-        return $this;
     }
 
     public function getDetail(): ?string

@@ -20,8 +20,14 @@
 		</div>
 	</div>
 
+	<br>
+	<h3>Etapes</h3>
+	<ul class="etapes" data-prototype="{{ form_widget(formView.etapes.vars.prototype)|e('html_attr') }}"></ul>
+	<button type="button" class="add_item_link btn btn-primary" data-collection-holder-class="etapes">Ajouter une étape</button>
+
 	{{ form_widget(formView) }}
 
+	<br>
 	<button type="submit" class="btn btn-primary">
 		<i class="fas fa-save"></i>
 		Créer la recette
