@@ -12,7 +12,7 @@ class HomeController extends AbstractController
      */
     public function homepage()
     {
-        return $this->render('home.html.twig');
+        return $this->redirectToRoute('recette_index');
     }
 
     /**

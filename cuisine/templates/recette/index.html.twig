@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+
 	<h1>Liste des recettes</h1>
 
 	<table class="table">
@@ -30,7 +31,5 @@
 			{% endfor %}
 		</tbody>
 	</table>
-	<a href="{{ path('recette_create') }}">
-		<i class="fas fa-save"></i>
-		Créer une recette</a>
+
 {% endblock %}
