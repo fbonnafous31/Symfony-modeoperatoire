@@ -20,7 +20,7 @@ class RecetteController extends AbstractController
 {
 
     /**
-     * @Route("/", name="recette_index")
+     * @Route("/all", name="recette_index")
      */
     public function index(RecetteRepository $recetteRepository)
     {
@@ -44,6 +44,16 @@ class RecetteController extends AbstractController
             'recette' => $recette,
             'niveau'  => $niveau,
             'prix'    => $prix
+        ]);
+    }
+
+    /**
+     * @Route("/chef/{user}", name="recettes_show_user")
+     */
+    public function show_user($user, RecetteRepository $recetteRepository)
+    {
+        return $this->render('recette/index.html.twig', [
+            'recettes' => $recetteRepository->findBy(array('user' => $user), array('nom' => 'ASC')),
         ]);
     }
 
@@ -92,6 +102,8 @@ class RecetteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $recette->setUser($this->getUser());
 
             foreach ($recette->getEtapes() as $etape) {
                 $etape->setRecette($recette);
