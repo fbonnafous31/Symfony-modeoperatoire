@@ -23,7 +23,12 @@
 	<br>
 	<h3>Etapes</h3>
 	<ul class="etapes" data-prototype="{{ form_widget(formView.etapes.vars.prototype)|e('html_attr') }}"></ul>
-	<button type="button" class="add_item_link btn btn-primary" data-collection-holder-class="etapes">Ajouter une étape</button>
+	<button type="button" class="add_item_link btn btn-primary" data-collection-holder-class="etapes">Ajouter</button>
+
+	<br><br>
+	<h3>Ingredients</h3>
+	<ul class="ingredients" data-prototype="{{ form_widget(formView.ingredients.vars.prototype)|e('html_attr') }}"></ul>
+	<button type="button" class="add_item_link btn btn-primary" data-collection-holder-class="ingredients">Ajouter</button>
 
 	{{ form_widget(formView) }}
 

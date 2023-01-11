@@ -18,12 +18,12 @@ class UstensileRecette
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Ustensile::class, inversedBy="ustensileRecettes")
+     * @ORM\ManyToOne(targetEntity=Ustensile::class, inversedBy="recette")
      */
     private $ustensile;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Recette::class, inversedBy="ustensileRecettes")
+     * @ORM\ManyToOne(targetEntity=Recette::class, inversedBy="ustensile")
      * @ORM\JoinColumn(nullable=false)
      */
     private $recette;

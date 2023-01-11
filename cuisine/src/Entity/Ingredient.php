@@ -27,11 +27,11 @@ class Ingredient
     /**
      * @ORM\OneToMany(targetEntity=IngredientRecette::class, mappedBy="ingredient")
      */
-    private $ingredientRecettes;
+    private $recette;
 
     public function __construct()
     {
-        $this->ingredientRecettes = new ArrayCollection();
+        $this->recette = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -54,27 +54,27 @@ class Ingredient
     /**
      * @return Collection<int, IngredientRecette>
      */
-    public function getIngredientRecettes(): Collection
+    public function getIngredients(): Collection
     {
-        return $this->ingredientRecettes;
+        return $this->recette;
     }
 
-    public function addIngredientRecette(IngredientRecette $ingredientRecette): self
+    public function addIngredient(IngredientRecette $ingredient): self
     {
-        if (!$this->ingredientRecettes->contains($ingredientRecette)) {
-            $this->ingredientRecettes[] = $ingredientRecette;
-            $ingredientRecette->setIngredient($this);
+        if (!$this->recette->contains($ingredient)) {
+            $this->recette[] = $ingredient;
+            $ingredient->setIngredient($this);
         }
 
         return $this;
     }
 
-    public function removeIngredientRecette(IngredientRecette $ingredientRecette): self
+    public function removeIngredient(IngredientRecette $ingredient): self
     {
-        if ($this->ingredientRecettes->removeElement($ingredientRecette)) {
+        if ($this->recette->removeElement($ingredient)) {
             // set the owning side to null (unless already changed)
-            if ($ingredientRecette->getIngredient() === $this) {
-                $ingredientRecette->setIngredient(null);
+            if ($ingredient->getIngredient() === $this) {
+                $ingredient->setIngredient(null);
             }
         }
 

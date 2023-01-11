@@ -27,11 +27,11 @@ class Ustensile
     /**
      * @ORM\OneToMany(targetEntity=UstensileRecette::class, mappedBy="ustensile")
      */
-    private $ustensileRecettes;
+    private $recette;
 
     public function __construct()
     {
-        $this->ustensileRecettes = new ArrayCollection();
+        $this->recette = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -56,25 +56,25 @@ class Ustensile
      */
     public function getUstensileRecettes(): Collection
     {
-        return $this->ustensileRecettes;
+        return $this->recette;
     }
 
-    public function addUstensileRecette(UstensileRecette $ustensileRecette): self
+    public function addUstensileRecette(UstensileRecette $ustensile): self
     {
-        if (!$this->ustensileRecettes->contains($ustensileRecette)) {
-            $this->ustensileRecettes[] = $ustensileRecette;
-            $ustensileRecette->setUstensile($this);
+        if (!$this->recette->contains($ustensile)) {
+            $this->recette[] = $ustensile;
+            $ustensile->setUstensile($this);
         }
 
         return $this;
     }
 
-    public function removeUstensileRecette(UstensileRecette $ustensileRecette): self
+    public function removeUstensileRecette(UstensileRecette $ustensile): self
     {
-        if ($this->ustensileRecettes->removeElement($ustensileRecette)) {
+        if ($this->recette->removeElement($ustensile)) {
             // set the owning side to null (unless already changed)
-            if ($ustensileRecette->getUstensile() === $this) {
-                $ustensileRecette->setUstensile(null);
+            if ($ustensile->getUstensile() === $this) {
+                $ustensile->setUstensile(null);
             }
         }
 

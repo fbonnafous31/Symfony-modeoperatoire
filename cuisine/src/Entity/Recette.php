@@ -45,14 +45,16 @@ class Recette
     private $etapes;
 
     /**
-     * @ORM\OneToMany(targetEntity=IngredientRecette::class, mappedBy="recette", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=IngredientRecette::class, mappedBy="recette")
+     * @var Collection<IngredientRecette>
      */
-    private $ingredientRecettes;
+    private $ingredient;
 
     /**
      * @ORM\OneToMany(targetEntity=UstensileRecette::class, mappedBy="recette", orphanRemoval=true)
+     * @var Collection<UstensileRecette>
      */
-    private $ustensileRecettes;
+    private $ustensile;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="recettes")
@@ -62,8 +64,8 @@ class Recette
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
-        $this->ingredientRecettes = new ArrayCollection();
-        $this->ustensileRecettes = new ArrayCollection();
+        $this->ingredient = new ArrayCollection();
+        //   $this->ustensiles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -157,27 +159,27 @@ class Recette
     /**
      * @return Collection<int, IngredientRecette>
      */
-    public function getIngredientRecettes(): Collection
+    public function getIngredients(): Collection
     {
-        return $this->ingredientRecettes;
+        return $this->ingredient;
     }
 
-    public function addIngredientRecette(IngredientRecette $ingredientRecette): self
+    public function addIngredient(IngredientRecette $ingredient): self
     {
-        if (!$this->ingredientRecettes->contains($ingredientRecette)) {
-            $this->ingredientRecettes[] = $ingredientRecette;
-            $ingredientRecette->setRecette($this);
+        if (!$this->ingredient->contains($ingredient)) {
+            $this->ingredient[] = $ingredient;
+            $ingredient->setRecette($this);
         }
 
         return $this;
     }
 
-    public function removeIngredientRecette(IngredientRecette $ingredientRecette): self
+    public function removeIngredient(IngredientRecette $ingredient): self
     {
-        if ($this->ingredientRecettes->removeElement($ingredientRecette)) {
+        if ($this->ingredient->removeElement($ingredient)) {
             // set the owning side to null (unless already changed)
-            if ($ingredientRecette->getRecette() === $this) {
-                $ingredientRecette->setRecette(null);
+            if ($ingredient->getRecette() === $this) {
+                $ingredient->setRecette(null);
             }
         }
 
@@ -189,13 +191,13 @@ class Recette
      */
     public function getUstensileRecettes(): Collection
     {
-        return $this->ustensileRecettes;
+        return $this->ustensile;
     }
 
     public function addUstensileRecette(UstensileRecette $ustensileRecette): self
     {
-        if (!$this->ustensileRecettes->contains($ustensileRecette)) {
-            $this->ustensileRecettes[] = $ustensileRecette;
+        if (!$this->ustensile->contains($ustensileRecette)) {
+            $this->ustensile[] = $ustensileRecette;
             $ustensileRecette->setRecette($this);
         }
 
@@ -204,7 +206,7 @@ class Recette
 
     public function removeUstensileRecette(UstensileRecette $ustensileRecette): self
     {
-        if ($this->ustensileRecettes->removeElement($ustensileRecette)) {
+        if ($this->ustensile->removeElement($ustensileRecette)) {
             // set the owning side to null (unless already changed)
             if ($ustensileRecette->getRecette() === $this) {
                 $ustensileRecette->setRecette(null);
