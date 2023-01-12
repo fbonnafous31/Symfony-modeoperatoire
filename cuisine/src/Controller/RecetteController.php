@@ -104,13 +104,19 @@ class RecetteController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $recette->setUser($this->getUser());
-            dd($recette);
 
             foreach ($recette->getEtapes() as $etape) {
                 $etape->setRecette($recette);
                 $em->persist($etape);
                 $recette->addEtape($etape);
             }
+
+            foreach ($recette->getIngredients() as $ingredient) {
+                $ingredient->setRecette($recette);
+                $em->persist($ingredient);
+                $recette->addIngredient($ingredient);
+            }
+
             $em->persist($recette);
             $em->flush();
 

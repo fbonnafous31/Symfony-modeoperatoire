@@ -189,27 +189,27 @@ class Recette
     /**
      * @return Collection<int, UstensileRecette>
      */
-    public function getUstensileRecettes(): Collection
+    public function getUstensiles(): Collection
     {
         return $this->ustensile;
     }
 
-    public function addUstensileRecette(UstensileRecette $ustensileRecette): self
+    public function addUstensile(UstensileRecette $ustensile): self
     {
-        if (!$this->ustensile->contains($ustensileRecette)) {
-            $this->ustensile[] = $ustensileRecette;
-            $ustensileRecette->setRecette($this);
+        if (!$this->ustensile->contains($ustensile)) {
+            $this->ustensile[] = $ustensile;
+            $ustensile->setRecette($this);
         }
 
         return $this;
     }
 
-    public function removeUstensileRecette(UstensileRecette $ustensileRecette): self
+    public function removeUstensileRecette(UstensileRecette $ustensile): self
     {
-        if ($this->ustensile->removeElement($ustensileRecette)) {
+        if ($this->ustensile->removeElement($ustensile)) {
             // set the owning side to null (unless already changed)
-            if ($ustensileRecette->getRecette() === $this) {
-                $ustensileRecette->setRecette(null);
+            if ($ustensile->getRecette() === $this) {
+                $ustensile->setRecette(null);
             }
         }
 

@@ -57,9 +57,16 @@ class RecetteType extends AbstractType
             'allow_add' => true,
         ]);
 
+        // $builder->add('ingredients', CollectionType::class, [
+        //     'label' => false,
+        //     'entry_type' => IngredientType::class,
+        //     'entry_options' => ['label' => false],
+        //     'allow_add' => true,
+        // ]);
+
         $builder->add('ingredients', CollectionType::class, [
             'label' => false,
-            'entry_type' => IngredientType::class,
+            'entry_type' => IngredientRecetteType::class,
             'entry_options' => ['label' => false],
             'allow_add' => true,
         ]);

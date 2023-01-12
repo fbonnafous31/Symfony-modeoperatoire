@@ -34,7 +34,7 @@ class IngredientRecette
     private $quantite;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $unite;
 
@@ -79,12 +79,12 @@ class IngredientRecette
         return $this;
     }
 
-    public function getUnite(): ?int
+    public function getUnite(): ?string
     {
         return $this->unite;
     }
 
-    public function setUnite(?int $unite): self
+    public function setUnite(?string $unite): self
     {
         $this->unite = $unite;
 
