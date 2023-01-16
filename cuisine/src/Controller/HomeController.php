@@ -12,6 +12,14 @@ class HomeController extends AbstractController
      */
     public function homepage()
     {
+        /** @var User */
+        $user = $this->getUser();
+
+        if ($user) {
+            return $this->redirectToRoute('recettes_show_user', [
+                'user' => $user->getId()
+            ]);
+        }
         return $this->redirectToRoute('recette_index');
     }
 

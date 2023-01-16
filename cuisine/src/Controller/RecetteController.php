@@ -146,7 +146,9 @@ class RecetteController extends AbstractController
             $this->mailer->send($email);
 
             $this->addFlash('success', "Recette créée");
-            return $this->redirectToRoute('recette_index');
+            return $this->redirectToRoute('recettes_show_user', [
+                'user' => $currentUser->getId()
+            ]);
         }
 
         $formView = $form->createView();
