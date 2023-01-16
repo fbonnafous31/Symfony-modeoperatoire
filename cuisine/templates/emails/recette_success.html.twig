@@ -1,0 +1,23 @@
+<h1>Nouvelle recette dans votre livre
+	{{ recette.nom }}</h1>
+
+<p>
+	Merci à vous
+	{{ user.email }}</p>
+
+<table>
+	<thead>
+		<th>Nom de la recette</th>
+		<th>Prix</th>
+		<th>Durée</th>
+		<th>Difficulté</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{ recette.nom }}</td>
+			<td>{{ recette.prix }}</td>
+			<td>{{ recette.duree }}</td>
+			<td>{{ recette.difficulte / 100}}</td>
+		</tr>
+	</tbody>
+</table>
