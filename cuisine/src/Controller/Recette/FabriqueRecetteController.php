@@ -4,27 +4,19 @@ namespace App\Controller\Recette;
 
 use App\Entity\Recette;
 use App\Form\RecetteType;
-use Symfony\Component\Mime\Address;
+use App\Event\RecetteSuccessEvent;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FabriqueRecetteController extends AbstractController
 {
-    protected $mailer;
-
-    public function __construct(MailerInterface $mailer)
-    {
-        $this->mailer = $mailer;
-    }
-
     /**
      * @Route("/recette/create", name="recette_create")
      */
-    public function create(Request $request, EntityManagerInterface $em)
+    public function create(Request $request, EntityManagerInterface $em, EventDispatcherInterface $dispatcher)
     {
         /** @var User */
         $currentUser = $this->getUser();
@@ -58,18 +50,7 @@ class FabriqueRecetteController extends AbstractController
             $em->persist($recette);
             $em->flush();
 
-            $email = new TemplatedEmail();
-
-            $email->to(new Address($currentUser->getEmail(), $currentUser->getUsername()))
-                ->from("contact@mail.com")
-                ->subject("Une nouvelle recette a été créée : ({$recette->getNom()}) !")
-                ->htmlTemplate('emails/recette_success.html.twig')
-                ->context([
-                    'recette' => $recette,
-                    'user' => $currentUser
-                ]);
-
-            $this->mailer->send($email);
+            $dispatcher->dispatch(new RecetteSuccessEvent($recette), 'recette.success');
 
             $this->addFlash('success', "Recette créée");
             return $this->redirectToRoute('recettes_show_user', [
