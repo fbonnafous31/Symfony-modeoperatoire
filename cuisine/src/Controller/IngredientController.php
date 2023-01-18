@@ -42,7 +42,7 @@ class IngredientController extends AbstractController
             return $this->redirectToRoute('ingredient_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('ingredient/create.html.twig', [
+        return $this->renderForm('ingredient/new.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form,
         ]);

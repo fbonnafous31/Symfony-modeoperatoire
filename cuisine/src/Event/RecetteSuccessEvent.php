@@ -14,7 +14,6 @@ class RecetteSuccessEvent extends Event
         $this->recette = $recette;
     }
 
-
     public function getRecette(): Recette
     {
         return $this->recette;

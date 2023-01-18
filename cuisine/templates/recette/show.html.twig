@@ -28,6 +28,11 @@
 		</tbody>
 	</table>
 
-	<a href="{{ path('recettes_show_user', {'user': app.user.id }) }}">Retour à la liste</a>
+	{% if app.user %}
+		<a href="{{ path('recettes_show_user', {'user': app.user.id }) }}">Retour à la liste</a>
+	{% else %}
+		<a href="{{ path('recette_index') }}">Retour à la liste</a>
+	{% endif %}
+
 
 {% endblock %}

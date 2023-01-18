@@ -5,13 +5,12 @@
 
 {% block body %}
 
-	<h1>Liste des recettes</h1>
-
-	<table class="table">
+	<table class="table table-striped">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>Nom</th>
 				<th>Durée</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,7 +20,9 @@
 					<td>{{ recette.duree }}</td>
 					<td>
 						<a href="{{ path('recette_show', {'id': recette.id}) }}">show</a>
-						<a href="{{ path('recette_edit', {'id': recette.id}) }}">edit</a>
+						{% if app.user %}
+							<a href="{{ path('recette_edit', {'id': recette.id}) }}">edit</a>
+						{% endif %}
 					</td>
 				</tr>
 			{% else %}
