@@ -64,9 +64,7 @@ L’idée de base est d’avoir un socle minimum de connaissance permettant la g
 
 - Activer le formatage lors de la sauvegarde
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.003.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.003.png)
 
 - Définir le langage Twig
 
@@ -101,9 +99,7 @@ Connaitre sa version en ligne de commande : git --version
 
 **Lancer le serveur**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.007.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.007.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.008.png)
 ## Étape 3 - Les routes 
@@ -136,13 +132,9 @@ Doctrine est un ORM qui permet de faire le lien entre les objets et la base de d
 
 **Installation du système de gestion des objets de base de données Symfony**
 
-![Une image contenant texte
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.011.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.011.png)
-
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.012.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.012.png)
 
 
 
@@ -180,42 +172,28 @@ Personnellement j’utilise l’extension MySQL de VS Code pour la visualisation
 
 Maker va me permettre de créer mes entités en ligne de commande
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.019.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.019.png)
 
 **Liste des commandes disponibles en lignes de commandes via maker**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.020.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.020.png)
 
 
 **Création de l’entité recette et de ses attributs**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.021.png)![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.022.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.021.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.022.png)
 
 
 
 Symfony crée une entité Recette ainsi qu’un Repository
 
-![Une image contenant texte
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.023.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.023.png)
-
-![Une image contenant texte, capture d’écran, moniteur, équipement électronique
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.024.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.024.png)
 
 Il faut ensuite réaliser une migration qui va générer un script contenant les instructions SQL nécessaires à la création de l’objet dans la base de données.
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.025.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.025.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.026.png)
 
@@ -233,9 +211,7 @@ Créer les entités, créer les scripts de migration et exécuter les scripts de
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.029.png)
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.030.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.030.png)
 ## Étape 5 - Alimenter la base de données (les fixtures)
 
 Les fixtures sont des jeux de données. Symfony permet d’alimenter la base de données via l’utilisation de jeux de données. 
@@ -244,9 +220,7 @@ L’installation du gestionnaire de fixtures va créer un répertoire de gestion
 
 **Installation du système de gestion des fixtures** 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.031.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.031.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.032.png)
 
@@ -262,9 +236,7 @@ Afin d’alimenter la base de données j’ai créé deux jeux de données au fo
 
 Une fois le script crééil suffit de l’exécuter en ligne de commande. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.034.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.034.png)
 
 L’exécution du script permet d’alimenter les tables de la base de données. 
 
@@ -275,9 +247,7 @@ Twig est un moteur de template pour PHP utilisé avec Symfony.
 
 **Installation du moteur de template Twig**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.036.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.036.png)
 
 L’installation met à jour les fichiers de configuration et crée les répertoires dédiés aux templates.
 
@@ -285,9 +255,7 @@ L’installation met à jour les fichiers de configuration et crée les réperto
 
 Création de la page d’accueil
 
-![Une image contenant texte, équipement électronique, capture d’écran
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.038.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.038.png)
 
 **Création du contrôleur de la page d’accueil**
 
@@ -323,15 +291,11 @@ La commande de génération du CRUD permet de créer :
 
 **Installation du composant de sécurité de validation des formulaires csrf**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.041.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.041.png)
 
 **Création des composant à partir de la commande**
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.042.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.042.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.043.png)
 
@@ -341,9 +305,7 @@ Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a40
 
 **Contenu du contrôleur** 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.044.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.044.png)
 
 **Exemples de rendu (liste et formulaire de modification d’un ingrédient)**
 
@@ -366,28 +328,20 @@ Un objet de type 1-n est un objet qui dispose d’une relation avec un autre obj
 
 Création de l’entité Étape
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.048.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.048.png)
 
 Création de la relation avec l’entité Recette
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.049.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.049.png)
 
 
 Symfony crée de nouvelles fonctions au niveau de l’entité recette pour permettre de faciliter la gestion des étapes. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.050.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.050.png)
 
 Reste à créer le script de migration et à l’exécuter pour retrouver la nouvelle entité et la relation au niveau de la base de données.
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.051.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.051.png)
 
 Et à l’exécuter
 
@@ -464,9 +418,7 @@ Notre entité utilisateur est désormais créée au niveau de la base de donnée
 
 Reste à créer un jeu de données d’utilisateurs avec un mot de passe encodé. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.065.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.065.png)
 
 
 \* On lance la création du jeu de données.
@@ -475,9 +427,7 @@ Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a40
 
 Nos deux utilisateurs (utilisateur connecté et administrateur) existent maintenant dans notre base de données. 
 
-![Une image contenant texte, moniteur, écran, noir
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.067.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.067.png)
 
 
 Reste à créer le système d’authentification. 
@@ -492,9 +442,7 @@ Dernier détail, il reste à rediriger l’utilisateur une fois connecté.
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.070.png)
 
-![Une image contenant texte, moniteur, capture d’écran, écran
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.071.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.071.png)
 
 Cette fois l’administrateur est bien connecté et nous l’avons redirigé vers la page d’accueil.
 
@@ -567,19 +515,13 @@ Dans mon exemple, il est nécessaire de créer une nouvelle relation du fait que
 
 La simulation du ManyToMany se fait par la création de ManyToOne sur les deux identifiants qui seront la clé de la nouvelle entité.
 
-![Une image contenant texte
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.080.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.080.png)
-
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.081.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.081.png)
 
 Création des attributs quantité et unité
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.082.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.082.png)
 
 
 
@@ -588,13 +530,9 @@ Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a40
 
 Génération de script de migration 
 
-![Une image contenant texte
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.083.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.083.png)
-
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.084.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.084.png)
 
 Mise à jour de la base de données
 
@@ -609,17 +547,13 @@ L’abstract contrôleur permet la création et la gestion de messages flash, me
 
 La création de ces messages se fait au niveau du contrôleur. Nous allons ajouter un message pour indiquer que la mise à jour de la recette a bien été prise en compte. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.087.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.087.png)
 
 Au niveau de l’affichage les messages sont stockés dans une variable app.flashes. Les messages sont stockés en mémoire jusqu’à être affichés. 
 
 Modification du programme base.html.twig dont hérite tous mes fichiers Twig pour afficher les messages sur n’importe quelle partie du site. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.088.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.088.png)
 
 Résultat de l’affichage d’un message
 
@@ -632,18 +566,14 @@ La gestion des formulaires nécessite la mise à jour du composant.
 
 Au niveau du répertoire de gestion des formulaires, on définit les propriétés des champs du formulaire.
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.091.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.091.png)
 
 Au niveau du contrôleur nous créons une fonction que permet :
 
 - D’afficher le formulaire
 - De traiter la soumission du formulaire
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.092.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.092.png)
 
 
 
@@ -651,24 +581,18 @@ Affichage au niveau de Twig, les instructions form\_start, form\_errors, form\_r
 
 [Twig Template Form Function and Variable Reference (Symfony 2.0 Docs)](https://symfony.com/doc/2.0/reference/forms/twig_reference.html)
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.093.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.093.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.094.png)
 ## Bonus 3 - Amélioration du visuel avec Bootstrap
 
 Définition d’un thème au niveau du fichier de configuration 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.095.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.095.png)
 
 Chargement des feuilles de style dans le fichier de base de l’ensemble des pages du site
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.096.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.096.png)
 
 
 ## Étape 12 – Des formulaires un peu plus complexes (la relation OneToMany)
@@ -681,15 +605,11 @@ Pour cela, j’ai suivi un petit tutoriel de Symfony qui explique comment faire.
 
 Création d’un formulaire pour l’affichage des étapes
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.097.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.097.png)
 
 Modification du formulaire de recette pour intégrer les étapes
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.098.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.098.png)
 
 Au niveau du formulaire de création Twig, ajout des étapes de la recette
 
@@ -697,29 +617,21 @@ Au niveau du formulaire de création Twig, ajout des étapes de la recette
 
 Pour rendre le formulaire dynamique nous avons besoin d’utiliser la bibliothèque de fonctions JQuery que nous déclarons dans le formulaire de base, ainsi qu’un script JS que nous allons écrire permettant d’ajouter des éléments à une collection (les étapes de notre recette).
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.100.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.100.png)
 
 Au niveau de notre entité, il faut ajouter une fonction \_\_tostring.
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.101.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.101.png)
 
 Et indiquer que la relation avec l’entité étape persiste. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.102.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.102.png)
 
 
 
 Le script JS permet d’ajouter ou supprimer une étape à la recette
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.103.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.103.png)
 
 
 
@@ -731,9 +643,7 @@ Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a40
 
 Au niveau du contrôleur on rajoute la relation entre les étapes et la recette, en rattachant les étapes au moment de la validation du formulaire. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.104.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.104.png)
 
 
 
@@ -761,9 +671,7 @@ Nous allons créer un formulaire qui contient les informations de la relation in
 
 Nous ajoutons cette collection à notre formulaire de recette. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.109.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.109.png)
 
 
 
@@ -776,31 +684,21 @@ Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a40
 
 Au niveau du contrôleur, il reste à ajouter les ingrédients à la recette. 
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.110.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.110.png)
 
 
 
 Au niveau du visuel nous réutilisons le script JS pour prendre en compte l’ajout d’ingrédients à notre recette. 
 
-![Une image contenant texte, moniteur, écran, noir
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.112.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.112.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.114.png)
 
-![Une image contenant texte, moniteur, écran, noir
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.114.png)
-
-![Une image contenant texte, moniteur, noir, écran
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.116.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.116.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.118.png)
 
-![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.111.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.113.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.115.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.117.png)![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.119.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.111.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.113.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.115.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.117.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.119.png)
 ## Étape 14 - Améliorer notre petite application
 
 Il s’agit d’une rapide introduction à Symfony sur un exemple assez simple de mise en place de composants.
@@ -818,30 +716,22 @@ L’idée de ce développement était surtout d’avoir un guide pour démarrer 
 
 La première chose à faire pour pouvoir générer des mails est d’installer les composants pour l’utiliser. 
 
-![Une image contenant texte
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.120.png)
 
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.120.png)
-
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.121.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.121.png)
 
 
 J’ai repris l’application mailtrap.io pour faire mes tests, comme proposé par Lior dans sa formation. Assez pratique car cela demande peu de configuration. 
 
 Juste mettre à jour le MAILER\_DNS au niveau du fichier d’environnement.
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.122.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.122.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.123.png)
 
 Au niveau du contrôleur de recette, charger la mailer interface au niveau du constructeur
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.124.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.124.png)
 
 Définir un mail après la création d’une nouvelle recette, et l’envoyer.
 ## ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.125.png)
@@ -853,9 +743,7 @@ Définir un template pour le corps du mail
 
 
 Il n’y a plus qu’à créer une nouvelle recette et tester que le mail est correctement généré.
-## ![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.127.png)
+## ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.127.png)
 
 ## Bonus 5 - le composant EventDispatcher 
 
@@ -875,9 +763,7 @@ C’est là que l’on va se servir de l’EventDispatcher qui va permettre de g
 
 Je vais ajouter un événement à la suite de la validation de la recette, et lorsque j’aurai besoin d’ajouter une action après la validation de ma recette (comme informer l’administrateur du site qu’une nouvelle recette a été créée), je ne modifierai plus ma fabrique de recette (fermée à la modification), mais je modifierai l’événement déclenché à la suite de l’insertion de la recette dans la base de données (ouvert à l’extension).
 
-![Une image contenant texte
-
-Description générée automatiquement](Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.128.png)
+![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.128.png)
 
 Au niveau du code de la fabrique de recette, je supprime la création du mail qui n’est pas propre à la création de ma recette, en le remplaçant pas un écouteur d’événement. 
 

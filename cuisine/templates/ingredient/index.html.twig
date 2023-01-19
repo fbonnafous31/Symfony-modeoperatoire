@@ -4,11 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ingredient index</h1>
+	<h1>Ingredients</h1>
 
-	<table class="table">
+	<table id="InfoTable" class="table table-striped">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>Id</th>
 				<th>Nom</th>
 				<th>actions</th>
@@ -36,4 +36,8 @@
 	{% if is_granted('ROLE_ADMIN') %}
 		<a href="{{ path('ingredient_create') }}">Create new</a>
 	{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+	<script src="/js/Datatable.js"></script>
 {% endblock %}
