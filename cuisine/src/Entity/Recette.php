@@ -40,7 +40,7 @@ class Recette
     private $prix;
 
     /**
-     * @ORM\OneToMany(targetEntity=Etape::class, mappedBy="recette", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity=Etape::class, cascade={"persist"}, mappedBy="recette")
      */
     private $etapes;
 
@@ -63,9 +63,9 @@ class Recette
 
     public function __construct()
     {
-        $this->etapes = new ArrayCollection();
-        $this->ingredient = new ArrayCollection();
-        //   $this->ustensiles = new ArrayCollection();
+        $this->etapes       = new ArrayCollection();
+        $this->ingredient   = new ArrayCollection();
+        $this->ustensile    = new ArrayCollection();
     }
 
     public function getId(): ?int

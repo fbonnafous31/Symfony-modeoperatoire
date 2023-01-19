@@ -39,28 +39,19 @@ class UstensileRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Ustensile[] Returns an array of Ustensile objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('u.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function getUstensiles($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
 
-//    public function findOneBySomeField($value): ?Ustensile
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        $sql = '
+            SELECT ustensile.nom, ustensile_recette.quantite
+            FROM ustensile, ustensile_recette  
+            WHERE ustensile.id = ustensile_recette.ustensile_id  
+            AND recette_id = :id
+        ';
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->executeQuery(['id' => $id]);
+
+        return $result->fetchAllAssociative();
+    }
 }

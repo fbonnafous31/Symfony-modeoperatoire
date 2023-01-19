@@ -6,8 +6,11 @@ use App\Form\RecetteType;
 use App\Repository\RecetteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CategoriesPrixRepository;
+use App\Repository\EtapeRepository;
+use App\Repository\IngredientRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\NiveauDifficulteRepository;
+use App\Repository\UstensileRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -32,7 +35,7 @@ class RecetteController extends AbstractController
     /**
      * @Route("/show/{id}", name="recette_show")
      */
-    public function show($id, RecetteRepository $recetteRepository, NiveauDifficulteRepository $niveauDifficulteRepository, CategoriesPrixRepository $categoriesPrixRepository)
+    public function show($id, RecetteRepository $recetteRepository, NiveauDifficulteRepository $niveauDifficulteRepository, CategoriesPrixRepository $categoriesPrixRepository, EtapeRepository $etapeRepository, IngredientRepository $ingredientRepository, UstensileRepository $ustensileRepository)
     {
         $recette = $recetteRepository->find($id);
 
@@ -40,10 +43,19 @@ class RecetteController extends AbstractController
 
         $prix = $categoriesPrixRepository->findOneBy(['categorie' => $recette->getprix()])->getDescription();
 
+        $etapes = $etapeRepository->findBy(['recette' => $recette->getId()]);
+
+        $ingredients = $ingredientRepository->getIngredients($id);
+
+        $ustensiles = $ustensileRepository->getUstensiles($id);
+
         return $this->render('recette/show.html.twig', [
-            'recette' => $recette,
-            'niveau'  => $niveau,
-            'prix'    => $prix
+            'recette'       => $recette,
+            'niveau'        => $niveau,
+            'prix'          => $prix,
+            'etapes'        => $etapes,
+            'ingredients'   => $ingredients,
+            'ustensiles'    => $ustensiles
         ]);
     }
 

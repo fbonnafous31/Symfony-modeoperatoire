@@ -39,28 +39,19 @@ class IngredientRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Ingredient[] Returns an array of Ingredient objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('i')
-//            ->andWhere('i.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('i.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function getIngredients($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
 
-//    public function findOneBySomeField($value): ?Ingredient
-//    {
-//        return $this->createQueryBuilder('i')
-//            ->andWhere('i.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        $sql = '
+            SELECT ingredient.nom, ingredient_recette.quantite, ingredient_recette.unite
+            FROM ingredient, ingredient_recette  
+            WHERE ingredient.id = ingredient_recette.ingredient_id
+            AND recette_id = :id
+        ';
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->executeQuery(['id' => $id]);
+
+        return $result->fetchAllAssociative();
+    }
 }
