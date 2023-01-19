@@ -4,11 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ustensile index</h1>
+	<h1>Ustensiles</h1>
 
-	<table class="table">
+	<table id="InfoTable" class="table table-striped">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>Id</th>
 				<th>Nom</th>
 				<th>actions</th>
@@ -33,4 +33,8 @@
 	</table>
 
 	<a href="{{ path('ustensile_create') }}">Create new</a>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="/js/Datatable.js"></script>
 {% endblock %}
