@@ -39,28 +39,20 @@ class RecetteRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Recette[] Returns an array of Recette objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function getRecette($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
 
-//    public function findOneBySomeField($value): ?Recette
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        $sql = '
+                SELECT recette.nom, recette.duree, niveau_difficulte.description niveau, categories_prix.description prix
+                FROM recette, niveau_difficulte, categories_prix
+                WHERE recette.difficulte = niveau_difficulte.niveau
+                AND recette.prix = categories_prix.categorie
+                AND recette.id = :id
+            ';
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->executeQuery(['id' => $id]);
+
+        return $result->fetchAllAssociative();
+    }
 }

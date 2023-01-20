@@ -777,6 +777,37 @@ Le succès de l’enregistrement de la recette entraînera la création d’un m
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.131.png)
 
+## Bonus 6 - Améliorer les tableaux
+
+Un petit script JS sympa qui permet d’enrichir les tableaux en proposant une recherche des éléments du tableau ainsi que la navigation. 
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.001.png)
+
+A déclarer au niveau du template
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.002.png)
+
+Et d’appeler dans les templates sur lesquels on souhaite l’utiliser
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.003.png)
+
+Possibilité de filtrer le nombre de résultats affichés, naviguer entre les pages de la liste ou de rechercher facilement un élément du tableau. 
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.004.png)
+
+## Étape 15 (et la dernière) - La gestion des requêtes complexes 
+
+Dans le cours que j’ai suivi qui dure près de 30 heures, à aucun moment Lior n’a besoin d’utiliser les classes du repository. Il se sert d’objets déjà existants, créés par le Framework pour gérer toutes les manipulations au niveau de la base de données. 
+
+Je trouve ça remarquable mais ma trop faible expérience du Framework ou la complexité de certaines requêtes ne me le permettent pas.
+
+Je trouve très pratique de définir des requêtes complexes au niveau des classes Repository. J’ai lu qu’il existait plusieurs méthodes pour interroger la base de données. Celle que j’utilise consiste à écrire la requête de manière native (je baigne dans le SQL depuis ma plus tendre enfance :D)
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.005.png)
+
+Et appeler la fonction au niveau du contrôleur. 
+
+![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.006.png)
 
 
 
