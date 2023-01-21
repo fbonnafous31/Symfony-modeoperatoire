@@ -1,0 +1,18 @@
+<table class="table table-striped">
+	<thead>
+		<tr class="table-dark">
+			<th>Ingrédient</th>
+			<th>Quantité</th>
+			<th>Unité</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for ingredient in ingredients %}
+			<tr>
+				<td>{{ ingredient.nom }}</td>
+				<td>{{ ingredient.quantite }}</td>
+				<td>{{ ingredient.unite }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

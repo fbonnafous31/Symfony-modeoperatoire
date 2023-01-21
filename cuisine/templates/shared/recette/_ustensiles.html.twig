@@ -1,0 +1,16 @@
+<table class="table table-striped">
+	<thead>
+		<tr class="table-dark">
+			<th>Ustensiles</th>
+			<th>Quantité</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for ustensile in ustensiles %}
+			<tr>
+				<td>{{ ustensile.nom }}</td>
+				<td>{{ ustensile.quantite }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</tbody></table>

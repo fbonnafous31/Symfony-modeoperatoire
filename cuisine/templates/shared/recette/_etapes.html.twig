@@ -1,0 +1,14 @@
+<table class="table table-striped">
+	<thead>
+		<tr class="table-dark">
+			<th>Description de l'étape</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for etape in etapes %}
+			<tr>
+				<td>{{ etape.detail }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

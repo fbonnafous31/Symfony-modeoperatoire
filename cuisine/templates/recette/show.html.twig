@@ -6,88 +6,22 @@
 
 {% block body %}
 	<h1>{{ recette.nom }}</h1>
-
-	<table class="table table-striped">
-		<tbody>
-			<tr>
-				<th>Nom</th>
-				<td>{{ recette.nom }}</td>
-			</tr>
-			<tr>
-				<th>Durée</th>
-				<td>{{ recette.duree }}</td>
-			</tr>
-			<tr>
-				<th>Difficulté</th>
-				<td>{{ niveau }}</td>
-			</tr>
-			<tr>
-				<th>Prix</th>
-				<td>{{ prix }}</td>
-			</tr>
-		</tbody>
-	</table><br>
+	{% include "/shared/recette/_recette.html.twig" %}
 
 	<div class="row">
 		<div class="col">
-			<table class="table table-striped">
-				<thead>
-					<tr class="table-dark">
-						<th>Description de l'étape</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for etape in etapes %}
-						<tr>
-							<td>{{ etape.detail }}</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+			{% include "/shared/recette/_etapes.html.twig" %}
 		</div>
 		<div class="col">
-			<table class="table table-striped">
-				<thead>
-					<tr class="table-dark">
-						<th>Ingrédient</th>
-						<th>Quantité</th>
-						<th>Unité</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for ingredient in ingredients %}
-						<tr>
-							<td>{{ ingredient.nom }}</td>
-							<td>{{ ingredient.quantite }}</td>
-							<td>{{ ingredient.unite }}</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+			{% include "/shared/recette/_ingredients.html.twig" %}
 		</div>
 		<div class="col">
-			<table class="table table-striped">
-				<thead>
-					<tr class="table-dark">
-						<th>Ingrédient</th>
-						<th>Quantité</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for ustensile in ustensiles %}
-						<tr>
-							<td>{{ ustensile.nom }}</td>
-							<td>{{ ustensile.quantite }}</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</tbody>
-		</table>
-	</div>
+			{% include "/shared/recette/_ustensiles.html.twig" %}
+		</div>
 
-	{% if app.user %}
-		<a href="{{ path('recettes_show_user', {'user': app.user.id }) }}">Retour à la liste</a>
-	{% else %}
-		<a href="{{ path('recette_index') }}">Retour à la liste</a>
-	{% endif %}
-{% endblock %}
+		{% if app.user %}
+			<a href="{{ path('recettes_show_user', {'user': app.user.id }) }}">Retour à la liste</a>
+		{% else %}
+			<a href="{{ path('recette_index') }}">Retour à la liste</a>
+		{% endif %}
+	{% endblock %}
