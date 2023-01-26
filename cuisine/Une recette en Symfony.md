@@ -90,6 +90,10 @@ Connaitre sa version en ligne de commande : git --version
 
 **Initialisation du projet**
 
+```
+composer create-project symfony/skeleton project_name
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.004.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.005.png)
