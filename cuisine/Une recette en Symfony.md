@@ -24,13 +24,13 @@ Là où lorsque mon entreprise me paye une formation ce n’est pas forcément m
 
 Là où lors d’une formation en présentiel, je n’ai qu’à attendre que le formateur vienne me débloquer sans que je n’aie besoin de faire l’effort de chercher. 
 
-- Le niveau du formateur n’est pas aligné sur son prix. Une formation en ligne peut être géniale et peu chère, là où en présentiel le message du formateur peut ne pas passer (ou vice versa bien évidemment). Le prix n’est pas nécessairement gage de qualité. 
+- Le niveau du formateur n’est pas aligné sur son prix. Une formation en ligne peut être de qualité et peu chère, là où en présentiel le message du formateur peut ne pas passer (ou vice versa bien évidemment). Le prix n’est pas nécessairement gage de qualité. 
+
+Au final, la bonne formation est celle qui permet de comprendre le message transmis, à chacun sa préférence et son rythme.
 
 L’idée de ce support est de donner les éléments de base et les étapes à la construction d’un projet, les outils et les composants nécessaires à chaque étape, de créer le mode opératoire me permettant de démarrer rapidement sur n’importe quel projet. 
 
-Voici ma recette d’un développement avec Symfony étape par étape.
-
-
+## Voici ma recette d’un développement avec Symfony étape par étape.
 
 Je souhaite créer un projet de gestion de recettes de cuisine avec une architecture permettant de gérer les recettes de cuisines, les ingrédients et ustensiles nécessaires à la réalisation de la recette, ainsi que les différentes étapes de fabrication. 
 
@@ -55,6 +55,7 @@ L’idée de base est d’avoir un socle minimum de connaissance permettant la g
 - Namespace Resolver
 - Twig Langage2
 - MySQL
+- Markdown Preview Enhanced
 
 **Paramétrage de VS Code**
 

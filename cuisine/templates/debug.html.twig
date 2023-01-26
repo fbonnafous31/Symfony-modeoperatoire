@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Page de debug
+{% endblock %}
+
+{% block body %}
+	<div class="highlight">
+		<input type="text" value="composer create-project symfony/skeleton" id="TextToCopy">
+		<button onclick="myFunction()">Copy</button>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src='/js/copyToClipboard.js'></script>
+{% endblock %}

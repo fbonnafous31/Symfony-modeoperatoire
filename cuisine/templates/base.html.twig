@@ -27,7 +27,10 @@
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 			<script src="/js/addElement.js"></script>
+			<script src="/js/copyToClipboard.js"></script>
 		{% endblock %}
+
+		<link rel="stylesheet" href="css/highlight.css">
 	</head>
 	<body>
 		{% include "/shared/_navbar.html.twig" %}

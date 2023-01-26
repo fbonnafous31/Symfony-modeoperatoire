@@ -30,4 +30,12 @@ class HomeController extends AbstractController
     {
         return $this->render('admin.html.twig');
     }
+
+    /**
+     * @Route("/debug", name="debug")
+     */
+    public function debugPage()
+    {
+        return $this->render('debug.html.twig');
+    }
 }
