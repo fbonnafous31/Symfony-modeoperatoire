@@ -1,1 +1,0 @@
-/home/bonnafous/projets/symfony/cuisine/Une recette en Symfony.md
