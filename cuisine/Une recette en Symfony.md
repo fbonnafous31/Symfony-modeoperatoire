@@ -2,7 +2,7 @@
 
 J’ai récemment réalisé une formation en ligne sur le Framework Symfony, autour des langages PHP et Twig. Excellente et très complète créée par Lior Chamla.
 
-Formation de grande qualité que je recommanderai à qui souhaite découvrir Symfony.
+Formation de grande qualité que je recommande volontiers à qui souhaite découvrir Symfony.
 
 [Symfony 5 : Le guide complet (web-develop.me)](https://learn.web-develop.me/view/courses/symfony-5-le-guide-complet-debutants-et-intermediaires)
 
@@ -129,6 +129,10 @@ Par exemple lorsque je demande à composer de charger les services pour la gesti
 
 **Attention** à bien être positionné dans le répertoire du projet  (sinon la commande de chargement ne fonctionne pas).
 
+```
+composer require annotations
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.009.png)
 
 **Test du système d’annotations**
@@ -152,10 +156,6 @@ composer require doctrine
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.011.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.012.png)
-
-
-
-
 
 Symfony propose de mettre à jour le fichier d’environnement dans lequel je vais configurer ma base de données. Dans mon cas j’utilise une base de données MySQL pour l’environnement de développement. 
 
@@ -347,7 +347,7 @@ composer require form validator security-csrf
 **Création des composant à partir de la commande**
 
 ```
-php bin/console make:crud crud_name
+php bin/console make:crud
 ```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.042.png)
@@ -384,7 +384,7 @@ Un objet de type 1-n est un objet qui dispose d’une relation avec un autre obj
 Création de l’entité Étape
 
 ```
-php bon/console make:entity entity_name
+php bin/console make:entity entity_name
 ```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.048.png)
