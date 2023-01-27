@@ -100,9 +100,17 @@ composer create-project symfony/skeleton project_name
 
 **Création d’un dépôt Git**
 
+```
+git init
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.006.png)
 
 **Lancer le serveur**
+
+```
+symfony serve
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.007.png)
 
@@ -135,6 +143,10 @@ Doctrine est un ORM qui permet de faire le lien entre les objets et la base de d
 
 **Création de la base de données**
 
+```
+composer require doctrine
+```
+
 **Installation du système de gestion des objets de base de données Symfony**
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.011.png)
@@ -150,6 +162,10 @@ Symfony propose de mettre à jour le fichier d’environnement dans lequel je va
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.013.png)
 
 **Création de la base de données pour le projet**
+
+```
+php bin/console doctrine:database:create
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.014.png)
 
@@ -177,6 +193,10 @@ Personnellement j’utilise l’extension MySQL de VS Code pour la visualisation
 
 Maker va me permettre de créer mes entités en ligne de commande
 
+```
+composer require maker
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.019.png)
 
 **Liste des commandes disponibles en lignes de commandes via maker**
@@ -186,9 +206,11 @@ Maker va me permettre de créer mes entités en ligne de commande
 
 **Création de l’entité recette et de ses attributs**
 
+```
+php bin/console make:entity entity_name
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.021.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.022.png)
-
-
 
 Symfony crée une entité Recette ainsi qu’un Repository
 
@@ -198,6 +220,10 @@ Symfony crée une entité Recette ainsi qu’un Repository
 
 Il faut ensuite réaliser une migration qui va générer un script contenant les instructions SQL nécessaires à la création de l’objet dans la base de données.
 
+```
+php bin/console make:migration
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.025.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.026.png)
@@ -205,6 +231,10 @@ Il faut ensuite réaliser une migration qui va générer un script contenant les
 Une fois le script de migration en base, il reste à l’exécuter. 
 
 L’exécution du script de migration va créer l’entité dans la base de données. 
+
+```
+php bin/console doctrine:migrations:migrate
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.027.png)
 
@@ -225,6 +255,10 @@ L’installation du gestionnaire de fixtures va créer un répertoire de gestion
 
 **Installation du système de gestion des fixtures** 
 
+```
+composer require orm-fixtures
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.031.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.032.png)
@@ -241,6 +275,10 @@ Afin d’alimenter la base de données j’ai créé deux jeux de données au fo
 
 Une fois le script crééil suffit de l’exécuter en ligne de commande. 
 
+```
+php bin/console doctrine:fixtures:load
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.034.png)
 
 L’exécution du script permet d’alimenter les tables de la base de données. 
@@ -251,6 +289,10 @@ L’exécution du script permet d’alimenter les tables de la base de données.
 Twig est un moteur de template pour PHP utilisé avec Symfony.
 
 **Installation du moteur de template Twig**
+
+```
+composer require twig
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.036.png)
 
@@ -296,9 +338,17 @@ La commande de génération du CRUD permet de créer :
 
 **Installation du composant de sécurité de validation des formulaires csrf**
 
+```
+composer require form validator security-csrf
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.041.png)
 
 **Création des composant à partir de la commande**
+
+```
+php bin/console make:crud crud_name
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.042.png)
 
@@ -333,6 +383,10 @@ Un objet de type 1-n est un objet qui dispose d’une relation avec un autre obj
 
 Création de l’entité Étape
 
+```
+php bon/console make:entity entity_name
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.048.png)
 
 Création de la relation avec l’entité Recette
@@ -356,22 +410,15 @@ Au niveau de la base de données
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.053.png)
 
-
-
-
-
-
 ## Bonus 1 - Le debugger de Symfony
 
 Avant de continuer le développement de l’application, on peut installer un composant assez sympa de Symfony qui communique de nombreuses informations sur le traitement des requêtes, les performances, les accès à la base de données et plein d’autres informations, le debugger.
 
+```
+composer require debug
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.054.png)
-
-
-
-
-
-
 
 Visualisation du nom de la route, du contrôleur et du statut.
 
@@ -382,6 +429,7 @@ Visualisation des informations contenues dans la requête, la réponse, les perf
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.056.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.057.png)
+
 ## Étape 9 - Mise en place d’un service d’authentification
 
 Afin de savoir sur quelle partie du site les utilisateurs pourront accéder et quelles actions seront autorisées en fonction de leurs rôles, nous allons créer un système d’authentification avec un rôle d’administrateur et le rôle d’utilisateur connecté et un rôle de visiteur.
@@ -394,9 +442,17 @@ L’administrateur pourra administrer les ingrédients et ustensiles, créer des
 
 Il faut d’abord installer le service sécurité de Symfony.
 
+```
+composer require security
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.058.png)
 
 Une fois installé nous allons créer une entité pour gérer nos utilisateurs. Il s’agit d’une entité un peu particulière créée à partir de la commande make:user (au lieu de la commande make :entity) qui implémente l’interface UserInterface.
+
+```
+php bin/console make:user User
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.059.png)
 
@@ -411,9 +467,17 @@ La commande va créer une classe permettant de gérer nos utilisateurs.
 
 On effectue la migration qui va créer le fichier de migration contenant les commande SQL permettant la mise à jour de notre base de données avec la création de notre entité stockant les utilisateurs. 
 
+```
+php bin/console make:migration
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.062.png)
 
 Et on lance le traitement.
+
+```
+php bon/console doctrine:migrations:migrate
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.063.png)
 
@@ -427,6 +491,10 @@ Reste à créer un jeu de données d’utilisateurs avec un mot de passe encodé
 
 
 \* On lance la création du jeu de données.
+
+```
+php bin/console doctrine:fixtures:load
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.066.png)
 
@@ -471,8 +539,6 @@ On peut masquer la fonction d’édition d’un ingrédient si l’on n’a pas 
 En mode administrateur
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.074.png)
-
-
 
 En mode utilisateur connecté ou visiteur
 
@@ -520,6 +586,10 @@ Dans mon exemple, il est nécessaire de créer une nouvelle relation du fait que
 
 La simulation du ManyToMany se fait par la création de ManyToOne sur les deux identifiants qui seront la clé de la nouvelle entité.
 
+```
+php bin/console make:entity entity_name
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.080.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.081.png)
@@ -529,11 +599,11 @@ Création des attributs quantité et unité
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.082.png)
 
 
-
-
-
-
 Génération de script de migration 
+
+```
+php bin/console make:migration
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.083.png)
 
@@ -541,10 +611,13 @@ Génération de script de migration
 
 Mise à jour de la base de données
 
+```
+php bin/console doctrine:migrations:migrate
+```
+
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.085.png)
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.086.png)
-
 
 ## Bonus 2 - Les messages Flash
 
@@ -566,6 +639,10 @@ Résultat de l’affichage d’un message
 ## Étape 12 - Les formulaires simples
 
 La gestion des formulaires nécessite la mise à jour du composant.
+
+```
+composer require form
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.090.png)
 
@@ -639,22 +716,9 @@ Le script JS permet d’ajouter ou supprimer une étape à la recette
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.103.png)
 
 
-
-
-
-
-
-
-
 Au niveau du contrôleur on rajoute la relation entre les étapes et la recette, en rattachant les étapes au moment de la validation du formulaire. 
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.104.png)
-
-
-
-
-
-
 
 
 A l’exécution le navigateur permet de saisir une recette, d’ajouter ou supprimer des étapes, et d’enregistrer le résultat dans la base de données. 
@@ -678,20 +742,9 @@ Nous ajoutons cette collection à notre formulaire de recette.
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.109.png)
 
-
-
-
-
-
-
-
-
-
 Au niveau du contrôleur, il reste à ajouter les ingrédients à la recette. 
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.110.png)
-
-
 
 Au niveau du visuel nous réutilisons le script JS pour prendre en compte l’ajout d’ingrédients à notre recette. 
 
@@ -703,8 +756,7 @@ Au niveau du visuel nous réutilisons le script JS pour prendre en compte l’aj
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.118.png)
 
-![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.111.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.113.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.115.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.117.png)![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.119.png)
-## Étape 14 - Améliorer notre petite application
+## Étape 14 - Améliorer encore notre application
 
 Il s’agit d’une rapide introduction à Symfony sur un exemple assez simple de mise en place de composants.
 
@@ -716,10 +768,13 @@ Améliorer la gestion des droits, la navigation, l’expérience utilisateur, le
 
 L’idée de ce développement était surtout d’avoir un guide pour démarrer facilement un projet avec Symfony. 
 
-
 ## Bonus 4 - Le composant de gestion de mail
 
 La première chose à faire pour pouvoir générer des mails est d’installer les composants pour l’utiliser. 
+
+```
+composer require mailer
+```
 
 ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.120.png)
 
@@ -742,12 +797,12 @@ Définir un mail après la création d’une nouvelle recette, et l’envoyer.
 ## ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.125.png)
 ##
 
-
 Définir un template pour le corps du mail
 ## ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.126.png)
 
 
 Il n’y a plus qu’à créer une nouvelle recette et tester que le mail est correctement généré.
+
 ## ![](public/images/md/Aspose.Words.0a26150c-6c33-4bc0-9473-a4068ff84a1a.127.png)
 
 ## Bonus 5 - le composant EventDispatcher 
@@ -813,6 +868,3 @@ Je trouve très pratique de définir des requêtes complexes au niveau des class
 Et appeler la fonction au niveau du contrôleur. 
 
 ![](public/images/md/Aspose.Words.e71f8470-0ce5-452f-8d9c-6c80069515de.006.png)
-
-
-
